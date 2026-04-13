@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Yojana Setu — Discover eligible Central and Maharashtra State Government schemes based on your personal attributes. Check your eligibility now.">
+    <title>Yojana Setu — Government Scheme Eligibility Checker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Tricolor Top Bar -->
+    <div class="tricolor-bar">
+        <div class="bar-saffron"></div>
+        <div class="bar-white"></div>
+        <div class="bar-green"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="emblem-icon" aria-label="National Emblem">
+                    <svg viewBox="0 0 64 64" width="48" height="48" fill="none">
+                        <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="2" fill="none" />
+                        <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5" fill="none" />
+                        <line x1="32" y1="2" x2="32" y2="22" stroke="currentColor" stroke-width="1.2" />
+                        <line x1="32" y1="42" x2="32" y2="62" stroke="currentColor" stroke-width="1.2" />
+                        <line x1="2" y1="32" x2="22" y2="32" stroke="currentColor" stroke-width="1.2" />
+                        <line x1="42" y1="32" x2="62" y2="32" stroke="currentColor" stroke-width="1.2" />
+                        <line x1="8" y1="8" x2="22" y2="22" stroke="currentColor" stroke-width="1" />
+                        <line x1="42" y1="42" x2="56" y2="56" stroke="currentColor" stroke-width="1" />
+                        <line x1="56" y1="8" x2="42" y2="22" stroke="currentColor" stroke-width="1" />
+                        <line x1="22" y1="42" x2="8" y2="56" stroke="currentColor" stroke-width="1" />
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>योजना सेतु</h1>
+                    <p class="tagline">Yojana Setu — Bridge to Government Schemes</p>
+                </div>
+            </div>
+            <nav class="header-nav">
+                <a href="#eligibility-form" class="nav-link">Check Eligibility</a>
+                <a href="#results-section" class="nav-link">Results</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🇮🇳 Digital India Initiative</div>
+            <h2>Discover Government Schemes<br><span class="highlight-text">You're Eligible For</span></h2>
+            <p class="hero-description">
+                Answer a few simple questions and instantly find Central &amp; Maharashtra State Government schemes
+                tailored for you.
+                Empowering citizens through transparent access to welfare programs.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-schemes-count">10+</span>
+                    <span class="stat-label">Schemes Listed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Governments</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Free Service</span>
+                </div>
+            </div>
+            <a href="#eligibility-form" class="hero-cta">
+                <span>Check Your Eligibility</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Eligibility Form Section -->
+        <section id="eligibility-form" class="section-card">
+            <div class="section-header">
+                <div class="section-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                        <line x1="16" y1="13" x2="8" y2="13" />
+                        <line x1="16" y1="17" x2="8" y2="17" />
+                        <polyline points="10 9 9 9 8 9" />
+                    </svg>
+                </div>
+                <div>
+                    <h2>Enter Your Details</h2>
+                    <p>Fill in your personal attributes to find matching government schemes</p>
+                </div>
+            </div>
+
+            <form id="scheme-form" novalidate>
+                <div class="form-grid">
+
+                    <!-- Age -->
+                    <div class="form-group" id="age-group">
+                        <label for="user-age">
+                            <span class="label-icon">🎂</span> Age (in years)
+                        </label>
+                        <input type="number" id="user-age" name="age" min="1" max="120" placeholder="e.g. 28" required>
+                        <span class="field-hint">Enter your current age</span>
+                    </div>
+
+                    <!-- Caste -->
+                    <div class="form-group" id="caste-group">
+                        <label for="user-caste">
+                            <span class="label-icon">📋</span> Caste Category
+                        </label>
+                        <select id="user-caste" name="caste" required>
+                            <option value="" disabled selected>Select your category</option>
+                            <option value="General">General</option>
+                            <option value="OBC">OBC (Other Backward Class)</option>
+                            <option value="SC">SC (Scheduled Caste)</option>
+                            <option value="ST">ST (Scheduled Tribe)</option>
+                            <option value="VJNT">VJNT (Vimukta Jati / Nomadic Tribes)</option>
+                            <option value="SBC">SBC (Special Backward Class)</option>
+                        </select>
+                        <span class="field-hint">As per government records</span>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="form-group" id="gender-group">
+                        <label>
+                            <span class="label-icon">👤</span> Gender
+                        </label>
+                        <div class="radio-group">
+                            <label class="radio-label" for="gender-male">
+                                <input type="radio" id="gender-male" name="gender" value="Male" required>
+                                <span class="radio-custom"></span>
+                                <span>Male</span>
+                            </label>
+                            <label class="radio-label" for="gender-female">
+                                <input type="radio" id="gender-female" name="gender" value="Female" required>
+                                <span class="radio-custom"></span>
+                                <span>Female</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Income -->
+                    <div class="form-group" id="income-group">
+                        <label for="user-income">
+                            <span class="label-icon">💰</span> Annual Income Level
+                        </label>
+                        <select id="user-income" name="income" required>
+                            <option value="" disabled selected>Select income range</option>
+                            <option value="100000">₹0 - 1 Lakh</option>
+                            <option value="250000">₹1 - 2.5 Lakhs</option>
+                            <option value="500000">₹2.5 - 5 Lakhs</option>
+                            <option value="800000">₹5 - 8 Lakhs</option>
+                            <option value="800001">Above ₹8 Lakhs</option>
+                        </select>
+                        <span class="field-hint">Total annual household income</span>
+                    </div>
+
+                    <!-- Occupation -->
+                    <div class="form-group" id="occupation-group">
+                        <label for="user-occupation">
+                            <span class="label-icon">💼</span> Occupation
+                        </label>
+                        <select id="user-occupation" name="occupation" required>
+                            <option value="" disabled selected>Select occupation</option>
+                            <option value="Student">Student</option>
+                            <option value="Farmer">Farmer</option>
+                            <option value="Unemployed">Unemployed</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="field-hint">Your current employment status</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="submit" id="check-btn" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <span>Check Eligibility</span>
+                    </button>
+                    <button type="reset" id="reset-btn" class="btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="1 4 1 10 7 10" />
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                        </svg>
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results-section" class="section-card results-hidden">
+            <div class="section-header">
+                <div class="section-icon results-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                </div>
+                <div>
+                    <h2>Your Eligible Schemes</h2>
+                    <p id="results-summary">Matching schemes will appear here</p>
+                </div>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" id="filter-tabs">
+                <button class="tab-btn active" data-filter="all">All Schemes</button>
+                <button class="tab-btn" data-filter="Central">Central Gov.</button>
+                <button class="tab-btn" data-filter="Maharashtra">Maharashtra</button>
+            </div>
+
+            <div id="results-container" class="results-grid">
+                <!-- Scheme cards will be injected here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="no-results-msg hidden">
+                <div class="no-results-icon">🔍</div>
+                <h3>No Matching Schemes Found</h3>
+                <p>We couldn't find schemes matching your current criteria. Try adjusting your inputs — different age,
+                    income, or category may unlock new possibilities.</p>
+                <button class="btn-secondary"
+                    onclick="document.getElementById('eligibility-form').scrollIntoView({behavior:'smooth'})">
+                    <span>Modify Criteria</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="main-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>योजना सेतु</h3>
+                    <p>Bridging citizens to government welfare schemes through technology.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="https://www.india.gov.in" target="_blank" rel="noopener">India.gov.in</a>
+                    <a href="https://www.maharashtra.gov.in" target="_blank" rel="noopener">Maharashtra.gov.in</a>
+                    <a href="https://www.myscheme.gov.in" target="_blank" rel="noopener">MyScheme Portal</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Disclaimer</h4>
+                    <p class="disclaimer-text">This is a demonstration tool. Always verify eligibility on official
+                        government portals before applying.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Yojana Setu. Built for Digital India. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tricolor Bottom Bar -->
+    <div class="tricolor-bar">
+        <div class="bar-green"></div>
+        <div class="bar-white"></div>
+        <div class="bar-saffron"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
